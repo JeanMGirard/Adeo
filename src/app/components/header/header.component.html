@@ -5,6 +5,15 @@
         </a>
     </div>
     <div class="header-nav"></div>
+    <nav class="header-nav" mat-tab-nav-bar>
+        <a mat-tab-link
+            *ngFor="let link of navLinks"
+            [routerLink]="link.path"
+            routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">
+              {{link.label}}
+        </a>
+    </nav>
     <div class="header-actions">
         <a href="https://adeocorp.sharepoint.com/" class="nav-link nav-text">
             Portail
